@@ -17,8 +17,6 @@ type config struct {
 	Cmds []executor.Command `yaml:"cmds"`
 }
 
-func init() {
-}
 func main() {
 	InfoLogger := logging.GetInfoLogger()
 	FatalLogger := logging.GetFatalLogger()
@@ -44,7 +42,6 @@ func main() {
 		FatalLogger.Fatalf("error: %v", err)
 	}
 
-	for _, cmd := range cmds.Cmds {
-		executor.RunCmd(cmd.Cmd, cmd.Args)
-	}
+	executor.RunCmds(cmds.Cmds)
+
 }

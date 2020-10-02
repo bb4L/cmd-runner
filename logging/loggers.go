@@ -21,24 +21,15 @@ var (
 
 // GetInfoLogger returns the InfoLogger
 func GetInfoLogger() *log.Logger {
-	once.Do(func() {
-		InfoLogger = log.New(os.Stderr, "INFO: ", log.Ldate|log.Ltime|log.Lmsgprefix)
-	})
-	return InfoLogger
+	return log.New(os.Stderr, "INFO: ", log.Ldate|log.Ltime|log.Lmsgprefix)
 }
 
 // GetErrorLogger returns the ErrorLogger
 func GetErrorLogger() *log.Logger {
-	once.Do(func() {
-		ErrorLogger = log.New(os.Stderr, "ERROR: ", log.Ldate|log.Ltime|log.Lmsgprefix)
-	})
-	return ErrorLogger
+	return log.New(os.Stderr, "ERROR: ", log.Ldate|log.Ltime|log.Lmsgprefix)
 }
 
 // GetFatalLogger returns the FatalLogger
 func GetFatalLogger() *log.Logger {
-	once.Do(func() {
-		FatalLogger = log.New(os.Stderr, "FATAL: ", log.Ldate|log.Ltime|log.Lmsgprefix)
-	})
-	return FatalLogger
+	return log.New(os.Stderr, "FATAL: ", log.Ldate|log.Ltime|log.Lmsgprefix)
 }
