@@ -40,9 +40,8 @@ func RunCmd(command string, args []string) {
 	cmd.Stdout = InfoLogger.Writer()
 	cmd.Stderr = ErrorLogger.Writer()
 	err := cmd.Start()
-	if err != nil {
-		FatalLogger.Fatalln("failed with")
-		FatalLogger.Fatalln(err)
-	}
 
+	if err != nil {
+		FatalLogger.Printf("failed with: %s", err)
+	}
 }

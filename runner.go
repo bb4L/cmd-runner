@@ -1,10 +1,12 @@
 package main
 
 import (
+	"bufio"
 	"cmdrunner/executor"
 	"cmdrunner/logging"
 	"io/ioutil"
 	"os"
+	"strings"
 
 	"gopkg.in/yaml.v2"
 )
@@ -44,4 +46,13 @@ func main() {
 
 	executor.RunCmds(cmds.Cmds)
 
+	buf := bufio.NewReader(os.Stdin)
+	InfoLogger.Print("press q to close")
+
+	for closingData, err := buf.ReadString('\n'); strings.TrimRight(strings.TrimRight(closingData, "\r\n"), "\n") != "q" || err != nil; closingData, err = buf.ReadString('\n') {
+		if err != nil {
+			FatalLogger.Println(err)
+			continue
+		}
+	}
 }
