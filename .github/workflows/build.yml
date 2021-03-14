@@ -1,0 +1,33 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.15
+
+    - name: Build linux arm
+      run: env GOOS=linux GOARCH=arm go build -o build/cmd_runner
+    
+    - name: Build linux 64
+      run: env GOOS=linux GOARCH=amd64 go build -o build/cmd_runner_64
+      
+    - name: Build windows 64
+      run: env GOOS=windows GOARCH=amd64 go build -o build/runner_win64.exe
+
+    - name: Upload Binaries
+      uses: actions/upload-artifact@v1
+      with:
+        name: bins
+        path: build/
