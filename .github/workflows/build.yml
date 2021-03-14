@@ -19,9 +19,10 @@ jobs:
 
     - name: Build linux arm
       run: env GOOS=linux GOARCH=arm go build -o build/cmd_runner
-    
+
     - name: Build linux 64
-      run: env GOOS=linux GOARCH=amd64 go build -o build/cmd_runner_64      
+      run: env GOOS=linux GOARCH=amd64 go build -o build/cmd_runner_64
+
     - name: Build windows 64
       run: env GOOS=windows GOARCH=amd64 go build -o build/runner_win64.exe
 
