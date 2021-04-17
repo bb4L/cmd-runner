@@ -5,6 +5,7 @@
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/bb4L/cmd_runner)
 ![GitHub Release Date](https://img.shields.io/github/release-date/bb4L/cmd_runner)
 ![GitHub](https://img.shields.io/github/license/bb4L/cmd_runner)
+[![Go Report Card](https://goreportcard.com/badge/github.com/bb4L/cmd_runner)](https://goreportcard.com/report/github.com/bb4L/cmd_runner)
 
 ## Build
 run the build script `build.sh`
