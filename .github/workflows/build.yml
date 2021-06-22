@@ -18,7 +18,7 @@ jobs:
         go-version: 1.15
 
     - name: Build linux arm
-      run: env GOOS=linux GOARCH=arm go build -o build/cmd_runner
+      run: env GOOS=linux GOARCH=arm go build -o build/cmd_runner_arm
 
     - name: Build linux 64
       run: env GOOS=linux GOARCH=amd64 go build -o build/cmd_runner_64
@@ -31,3 +31,14 @@ jobs:
       with:
         name: bins
         path: build/
+        
+    - name: Add binaries to release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+      with:
+        files: |
+          build/runner_win64.exe
+          build/cmd_runner_64
+          build/cmd_runner_arm
