@@ -5,7 +5,7 @@
 ![GitHub Release Date](https://img.shields.io/github/release-date/bb4L/cmd-runner)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bb4L/cmd-runner)
 ![GitHub](https://img.shields.io/github/license/bb4L/cmd-runner)
-[![CI](https://github.com/bb4L/cmd_runner/actions/workflows/build.yml/badge.svg)](https://github.com/bb4L/cmd-runner/actions/workflows/build.yml)
+[![CI](https://github.com/bb4L/cmd-runner/actions/workflows/build.yml/badge.svg)](https://github.com/bb4L/cmd-runner/actions/workflows/build.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/bb4L/cmd-runner)](https://goreportcard.com/report/github.com/bb4L/cmd-runner)
 
 ## Build

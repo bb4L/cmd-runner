@@ -4,10 +4,10 @@ import (
 	"os"
 	"os/exec"
 
-	"github.com/bb4L/cmd_runner/logging"
+	"github.com/bb4L/cmd-runner/logging"
 )
 
-var logger = logging.GetLogger(os.Stdout, "cmd_runner", "executor")
+var logger = logging.GetLogger(os.Stdout, "cmd-runner", "executor")
 
 // Command struct for the command to be executed
 type Command struct {

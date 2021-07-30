@@ -25,7 +25,7 @@ jobs:
       run: env GOOS=linux GOARCH=amd64 go build -o build/cmd_runner_64
 
     - name: Build windows 64
-      run: env GOOS=windows GOARCH=amd64 go build -o build/runner_win64.exe
+      run: env GOOS=windows GOARCH=amd64 go build -o build/cmd_runner_win64.exe
 
     - name: Upload Binaries
       uses: actions/upload-artifact@v1
@@ -40,6 +40,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
       with:
         files: |
-          build/runner_win64.exe
+          build/cmd_runner_win64.exe
           build/cmd_runner_64
           build/cmd_runner_arm

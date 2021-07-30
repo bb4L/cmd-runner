@@ -7,13 +7,13 @@ import (
 	"os"
 	"strings"
 
-	"github.com/bb4L/cmd_runner/executor"
-	"github.com/bb4L/cmd_runner/logging"
+	"github.com/bb4L/cmd-runner/executor"
+	"github.com/bb4L/cmd-runner/logging"
 
 	"gopkg.in/yaml.v2"
 )
 
-var logger = logging.GetLogger(os.Stdout, "cmd_runner", "runner")
+var logger = logging.GetLogger(os.Stdout, "cmd-runner", "runner")
 
 type config struct {
 	Cmds []executor.Command `yaml:"cmds"`

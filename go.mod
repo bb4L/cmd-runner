@@ -1,4 +1,4 @@
-module github.com/bb4L/cmd_runner
+module github.com/bb4L/cmd-runner
 
 go 1.16
 
